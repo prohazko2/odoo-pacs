@@ -1,0 +1,23 @@
+{
+  "name": "odoo-pacs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prohazko2/odoo-pacs.git"
+  },
+  "author": "",
+  "dependencies": {
+    "@slack/webhook": "^6.0.0",
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "odoo-xmlrpc": "^1.0.8",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {}
+}
