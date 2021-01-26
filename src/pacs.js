@@ -3,7 +3,7 @@ const querystring = require("querystring");
 const WebSocket = require("ws");
 const { EventEmitter } = require("events");
 
-const log = require("./log");
+const { log } = require("./util");
 
 const PING_TIMEOUT = 35000 + 1000;
 
@@ -42,12 +42,12 @@ class RicPacs {
   }
 
   connectEvents() {
-    const q = querystring.stringify({
+    const qs = querystring.stringify({
       "where.event": "object-packet",
       "where._oid": this.objectId,
     });
 
-    this.ws = new WebSocket(`${this.baseUrl}/events/stream?${q}`, {
+    this.ws = new WebSocket(`${this.baseUrl}/events/stream?${qs}`, {
       headers: this.getHeaders(),
     });
 
@@ -80,7 +80,7 @@ class RicPacs {
       event.eventCode = +event.eventCode;
       event.time = new Date(+event.eventTime);
 
-      if (!this.colleagues[event.keyNumber]) {
+      if (!event.employeeId) {
         log("[pacs] unknown colleague", event);
         return;
       }

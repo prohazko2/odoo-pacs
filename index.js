@@ -1,11 +1,9 @@
-const dotenv = require("dotenv");
-const log = require("./src/log");
+require("dotenv").config();
 
-dotenv.config();
+const { log, Queue } = require("./src/util");
 
 const odoo = require("./src/odoo");
 const pacs = require("./src/pacs");
-const Queue = require("./src/queue");
 
 const q = new Queue();
 

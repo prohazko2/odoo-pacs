@@ -1,8 +1,7 @@
 const Odoo = require("odoo-xmlrpc");
 const { parse } = require("url");
 
-const log = require("./log");
-const slack = require("./slack");
+const { log, slack } = require("./util");
 
 const DAY_TIME = 24 * 60 * 60 * 1000;
 const TOO_LONG_TIME = 3 * DAY_TIME;
@@ -17,7 +16,7 @@ function startOfDay(date = new Date()) {
 
 function endOfDay(date = new Date()) {
   const end = new Date(date);
-  end.setHours(23, 59, 59, 999);
+  end.setHours(23 - OFFICE_TZ_OFFSET, 59, 59, 999);
   return end;
 }
 
@@ -127,7 +126,7 @@ class BetterOdoo {
 
   async sendEarlyBirdNotify(event) {
     const employee = await this.findEmployee(event.employeeId);
-    slack.send(
+    slack(
       `${employee ? employee.name : "???"} ${
         employee && employee.gender === "male" ? "открыл" : "открыла"
       } офис`
