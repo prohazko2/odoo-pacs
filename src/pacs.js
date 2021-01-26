@@ -5,7 +5,8 @@ const { EventEmitter } = require("events");
 
 const { log } = require("./util");
 
-const PING_TIMEOUT = 35000 + 1000;
+const PING_TIMEOUT = 36 * 1000;
+const RELOAD_PERIOD = 10 * 60 * 1000;
 
 class RicPacs {
   constructor() {
@@ -128,7 +129,7 @@ class RicPacs {
 
     setTimeout(async () => {
       this.colleagues = await this.loadColleaguesMap();
-    }, 10 * 60 * 1000);
+    }, RELOAD_PERIOD);
 
     return colleagues;
   }
