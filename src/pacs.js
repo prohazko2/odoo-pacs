@@ -13,10 +13,9 @@ class RicPacs {
     this.token = process.env["RIC_TOKEN"];
     this.objectId = process.env["RIC_OBJECT"];
 
-    this.token = this.token.replace(`Bearer`, "").trim();
+    this.token = this.token.replace("Bearer", "").trim();
 
     this.colleagues = {};
-    this.fetch = fetch;
     this.events = new EventEmitter();
 
     this.init();
