@@ -4,16 +4,16 @@ Simple project with Rightech IoT and Odoo Attendances module integration
 
 ## env
 
-| var                           | example                                          |
-| ----------------------------- | ------------------------------------------------ |
-| RIC_TOKEN                     | eyJhbGciOiJIUzI...                               |
-| RIC_OBJECT                    | 60009807a5284419c8000000                         |
-| ODOO_URL                      | http://user:pass@127.0.0.1:8069/dbname           |
-| SLACK_WEBHOOK_URL             | https://hooks.slack.com/services/xxxxx/xxxx/xxxx |
+| var                           | example                                          
+| ----------------------------- | -----------------------------------
+| RIC_TOKEN                     | eyJhbGciOiJIUzI...
+| RIC_OBJECT                    | 60009807a5284419c8000000
+| ODOO_URL                      | http://user:pass@127.0.0.1:8069/dbname
+| SLACK_WEBHOOK_URL             | https://hooks.slack.com/services/xxxxx/xxxx/xxxx
 
 
 
-# run
+## run
 
 Install NPM dependencies
 
@@ -26,3 +26,11 @@ Run service
 ```bash
 $ npm start
 ```
+
+## src
+
+| file                          | description                                          
+| ----------------------------- | -------------------------------------
+| index.js                      | entrypoint
+| src/pacs.js                   | connect to Rightech IoT WebSocket API, listen for attendance events
+| src/odoo.js                   | Odoo XML RPC wrap 
