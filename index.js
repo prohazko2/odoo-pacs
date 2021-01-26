@@ -9,7 +9,7 @@ const Queue = require("./src/queue");
 
 const q = new Queue();
 
-pacs.onEnter(async (event) => {
+pacs.onEnter((event) => {
   log(`[pacs] <-`, event);
   q.enqueue(() => odoo.checkIn(event));
 });
