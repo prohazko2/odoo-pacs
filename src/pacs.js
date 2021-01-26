@@ -127,8 +127,8 @@ class RicPacs {
       colleagues = JSON.parse(colleagues);
     }
 
-    setTimeout(() => {
-      this.loadColleaguesMap();
+    setTimeout(async () => {
+      this.colleagues = await this.loadColleaguesMap();
     }, 10 * 60 * 1000);
 
     return colleagues;
