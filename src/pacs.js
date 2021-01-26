@@ -86,12 +86,12 @@ class RicPacs {
         return;
       }
 
-      if (+evobj.eventCode === 16) {
+      if (event.eventCode === 16) {
         event.name = "pacs-leave";
         this.events.emit("pacs-leave", event);
       }
 
-      if (+evobj.eventCode === 17) {
+      if (event.eventCode === 17) {
         event.name = "pacs-enter";
         this.events.emit("pacs-enter", event);
       }
