@@ -1,6 +1,8 @@
 # odoo-pacs
 
-Simple project with Rightech IoT and Odoo Attendances module integration
+Simple project with [Rightech IoT](https://rightech.io/) and [Odoo](https://www.odoo.com/) Attendances module integration.  
+[Habr Article (RU)](https://habr.com/ru/company/ric/blog/539374/)
+
 
 ## env
 
