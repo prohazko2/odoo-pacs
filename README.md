@@ -8,6 +8,7 @@ Simple project with [Rightech IoT](https://rightech.io/) and [Odoo](https://www.
 
 | var                        | example                                          |
 | -------------------------- | ------------------------------------------------ |
+| RIC_URL                    | https://dev.rightech.io/                         |
 | RIC_TOKEN                  | eyJhbGciOiJIUzI...                               |
 | RIC_OBJECT                 | 60009807a5284419c8000000                         |
 | ODOO_URL                   | http://user:pass@127.0.0.1:8069/dbname           |
