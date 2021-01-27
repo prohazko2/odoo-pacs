@@ -10,7 +10,7 @@ const RELOAD_PERIOD = 10 * 60 * 1000;
 
 class RicPacs {
   constructor() {
-    this.baseUrl = `https://dev.rightech.io`;
+    this.baseUrl =  process.env["RIC_URL"] || `https://dev.rightech.io`;
     this.token = process.env["RIC_TOKEN"];
     this.objectId = process.env["RIC_OBJECT"];
 
